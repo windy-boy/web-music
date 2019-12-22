@@ -22,6 +22,7 @@ export default {
 html, body {
   margin: 0;
   min-width: 982px;
+  font-size: 12px;
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
