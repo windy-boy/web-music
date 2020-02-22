@@ -1,103 +1,111 @@
-import util from '../libs/axios'
-export function getBanner (params) {
-  return util.get('/banner', { params })
+import util from "../libs/axios";
+
+export function getBanner(params) {
+  return util.get("/banner", { params });
 }
 
 /**
- * »ñÈ¡¸èµ¥
- * @param order // new hot ¶ÔÓ¦×îĞÂºÍ×îÈÈ
- * @param cat // tag ÀàĞÍ
- * @param limit // ÊıÁ¿
+ * è·å–æ­Œå•
+ * @param order // new hot å¯¹åº”æœ€æ–°å’Œæœ€çƒ­
+ * @param cat // tag ç±»å‹
+ * @param limit // æ•°é‡
  */
-export function getPlayList (params) {
-  return util.get('/top/playlist', { params })
+export function getPlayList(params) {
+  return util.get("/top/playlist", { params });
 }
 
 /**
- * »ñÈ¡¸èµ¥·ÖÀà
- * @param params 
+ * è·å–æ­Œå•åˆ†ç±»
+ * @param params
  */
-export function getPlayListCatList (params) {
-  return util.get('/playlist/catlist', { params })
+export function getPlayListCatList(params) {
+  return util.get("/playlist/catlist", { params });
 }
 
 /**
- * »ñÈ¡ÈÈÃÅ¸èµ¥·ÖÀà
- * @param params 
+ * è·å–çƒ­é—¨æ­Œå•åˆ†ç±»
+ * @param params
  */
-export function getPlayListHot (params) {
-  return util.get('/playlist/hot', { params })
+export function getPlayListHot(params) {
+  return util.get("/playlist/hot", { params });
 }
 
 /**
- * »ñÈ¡ÈÈÃÅĞÂµú/×îĞÂ×¨¼­
- * @param params 
+ * è·å–çƒ­é—¨æ–°ç¢Ÿ/æœ€æ–°ä¸“è¾‘
+ * @param params
  */
-export function getAlbumNewest (params) {
-  return util.get('/album/newest', { params })
+export function getAlbumNewest(params) {
+  return util.get("/album/newest", { params });
 }
 
-// ÍÆ¼ö¸èµ¥/personalizedÒÔ¼°ÍÆ¼öµçÌ¨/personalized/djprogram   limit//ÊıÁ¿
+// æ¨èæ­Œå•/personalizedä»¥åŠæ¨èç”µå°/personalized/djprogram   limit//æ•°é‡
 
 /**
- * ÍÆ¼ö¸èµ¥
- * @param 
- */
-export function getPersonalized (params) {
-  return util.get('/personalized', { params })
-}
-
-/**
- * ÍÆ¼öµçÌ¨
+ * æ¨èæ­Œå•
  * @param
  */
-export function getDJprogram (params) {
-  return util.get('/personalized/djprogram', { params })
+export function getPersonalized(params) {
+  return util.get("/personalized", { params });
 }
 
 /**
- * »ñÈ¡¶ÔÓ¦°ñµ¥ÏÂµÄ¸èÇú
- * @param idx // °ñµ¥id
+ * æ¨èç”µå°
+ * @param
  */
-export function getTopSongList (params) {
-  return util.get('/top/list', { params })
+export function getDJprogram(params) {
+  return util.get("/personalized/djprogram", { params });
 }
 
 /**
- * »ñÈ¡°ñµ¥ÄÚÈİÕªÒª
+ * è·å–å¯¹åº”æ¦œå•ä¸‹çš„æ­Œæ›²
+ * @param idx // æ¦œå•id
  */
-export function getTopListDetail (params) {
-  return util.get('/toplist/detail', { params })
+export function getTopSongList(params) {
+  return util.get("/top/list", { params });
 }
 
 /**
- * »ñÈ¡ËùÓĞ°ñµ¥
+ * è·å–æ¦œå•å†…å®¹æ‘˜è¦
  */
-export function getTopList (params) {
-  return util.get('/toplist', { params })
+export function getTopListDetail(params) {
+  return util.get("/toplist/detail", { params });
 }
 
 /**
- * »ñÈ¡Èë×¤¸èÊÖ
- * cat ¸èÊÖÀàĞÍ 5001 => Èë×¤¸èÊÖ
+ * è·å–æ‰€æœ‰æ¦œå•
  */
-export function getArtistSettinList (params) {
-  return util.get('/artist/list', { params })
+export function getTopList(params) {
+  return util.get("/toplist", { params });
 }
 
 /**
- * »ñÈ¡¸èµ¥ÏêÇé
- * id ¸èµ¥id
+ * è·å–å…¥é©»æ­Œæ‰‹
+ * cat æ­Œæ‰‹ç±»å‹ 5001 => å…¥é©»æ­Œæ‰‹
  */
-export function getPlayListDetail (params) {
-  return util.get('/playlist/detail', { params })
+export function getArtistSettinList(params) {
+  return util.get("/artist/list", { params });
 }
 
 /**
- * »ñÈ¡ÒôÀÖurl
- * id ÒôÀÖ id
+ * è·å–æ­Œå•è¯¦æƒ…
+ * id æ­Œå•id
  */
-export function getSongUrl (params) {
-  return util.get('/song/url', { params })
+export function getPlayListDetail(params) {
+  return util.get("/playlist/detail", { params });
 }
 
+/**
+ * è·å–éŸ³ä¹url
+ * id éŸ³ä¹ id
+ */
+export function getSongUrl(params) {
+  return util.get("/song/url", { params });
+}
+
+/**
+ * è·å–æ­Œè¯
+ * id éŸ³ä¹id
+ */
+export function getSongLyric(params) {
+  return util.get("/lyric", { params });
+}

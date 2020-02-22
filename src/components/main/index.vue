@@ -6,12 +6,12 @@
   </div>
 </template>
 <script>
-import topBar from '../top-bar'
-import btmBar from '../btm-bar'
+import topBar from "../top-bar";
+import btmBar from "../btm-bar";
 export default {
-   components: {
+  components: {
     topBar,
     btmBar
   }
-}
+};
 </script>

@@ -8,37 +8,55 @@
       <div class="top-bar-title-container">
         <ul>
           <router-link to="/find-music">
-            <li @click="handleChangeTitle(1)" :class="triangle[1] ? 'top-li-active' : ''">
+            <li
+              @click="handleChangeTitle(1)"
+              :class="triangle[1] ? 'top-li-active' : ''"
+            >
               发现音乐
               <span v-show="triangle[1]"></span>
             </li>
           </router-link>
           <router-link to="/me-music">
-            <li @click="handleChangeTitle(2)" :class="triangle[2] ? 'top-li-active' : ''">
+            <li
+              @click="handleChangeTitle(2)"
+              :class="triangle[2] ? 'top-li-active' : ''"
+            >
               我的音乐
               <span v-show="triangle[2]"></span>
             </li>
           </router-link>
           <router-link to="/friends">
-            <li @click="handleChangeTitle(3)" :class="triangle[3] ? 'top-li-active' : ''">
+            <li
+              @click="handleChangeTitle(3)"
+              :class="triangle[3] ? 'top-li-active' : ''"
+            >
               朋友
               <span v-show="triangle[3]"></span>
             </li>
           </router-link>
           <router-link to="/mall">
-            <li @click="handleChangeTitle(4)" :class="triangle[4] ? 'top-li-active' : ''">
+            <li
+              @click="handleChangeTitle(4)"
+              :class="triangle[4] ? 'top-li-active' : ''"
+            >
               商城
               <span v-show="triangle[4]"></span>
             </li>
           </router-link>
           <router-link to="/musician">
-            <li @click="handleChangeTitle(5)" :class="triangle[5] ? 'top-li-active' : ''">
+            <li
+              @click="handleChangeTitle(5)"
+              :class="triangle[5] ? 'top-li-active' : ''"
+            >
               音乐人
               <span v-show="triangle[5]"></span>
             </li>
           </router-link>
           <router-link to="/download-client">
-            <li @click="handleChangeTitle(6)" :class="triangle[6] ? 'top-li-active' : ''">
+            <li
+              @click="handleChangeTitle(6)"
+              :class="triangle[6] ? 'top-li-active' : ''"
+            >
               下载客户端
               <span v-show="triangle[6]"></span>
             </li>
@@ -47,7 +65,11 @@
         <span><Badge text="HOT"></Badge></span>
       </div>
       <div class="top-bar-other-container">
-        <Input prefix="ios-search" placeholder="音乐/视频/电台/用户" style="width: 175px;" />
+        <Input
+          prefix="ios-search"
+          placeholder="音乐/视频/电台/用户"
+          style="width: 175px;"
+        />
         <div>创作者中心</div>
         <div>登录</div>
       </div>
@@ -56,22 +78,46 @@
       <div v-show="triangle[1]">
         <ul>
           <router-link to="/find-music/recommend">
-            <li @click="handleChangeMusicType(1)"><span :class="musicType[0] === 1 ? 'top-span-active' : ''">推荐</span></li>
+            <li @click="handleChangeMusicType(1)">
+              <span :class="musicType[0] === 1 ? 'top-span-active' : ''"
+                >推荐</span
+              >
+            </li>
           </router-link>
           <router-link to="/find-music/leaderboard">
-            <li @click="handleChangeMusicType(2)"><span :class="musicType[0] === 2 ? 'top-span-active' : ''">排行榜</span></li>
+            <li @click="handleChangeMusicType(2)">
+              <span :class="musicType[0] === 2 ? 'top-span-active' : ''"
+                >排行榜</span
+              >
+            </li>
           </router-link>
           <router-link to="/find-music/song-list">
-            <li @click="handleChangeMusicType(3)"><span :class="musicType[0] === 3 ? 'top-span-active' : ''">歌单</span></li>
+            <li @click="handleChangeMusicType(3)">
+              <span :class="musicType[0] === 3 ? 'top-span-active' : ''"
+                >歌单</span
+              >
+            </li>
           </router-link>
           <router-link to="/find-music/anchor-radio">
-            <li @click="handleChangeMusicType(4)"><span :class="musicType[0] === 4 ? 'top-span-active' : ''">主播电台</span></li>
+            <li @click="handleChangeMusicType(4)">
+              <span :class="musicType[0] === 4 ? 'top-span-active' : ''"
+                >主播电台</span
+              >
+            </li>
           </router-link>
           <router-link to="/find-music/singer">
-            <li @click="handleChangeMusicType(5)"><span :class="musicType[0] === 5 ? 'top-span-active' : ''">歌手</span></li>
+            <li @click="handleChangeMusicType(5)">
+              <span :class="musicType[0] === 5 ? 'top-span-active' : ''"
+                >歌手</span
+              >
+            </li>
           </router-link>
           <router-link to="/find-music/new-disc-shelf">
-            <li @click="handleChangeMusicType(6)"><span :class="musicType[0] === 6 ? 'top-span-active' : ''">新碟上架</span></li>
+            <li @click="handleChangeMusicType(6)">
+              <span :class="musicType[0] === 6 ? 'top-span-active' : ''"
+                >新碟上架</span
+              >
+            </li>
           </router-link>
         </ul>
       </div>
@@ -80,7 +126,7 @@
 </template>
 <script>
 export default {
-  data () {
+  data() {
     return {
       triangle: {
         1: true,
@@ -91,24 +137,24 @@ export default {
         6: false
       },
       musicType: [1],
-      routerLink: ''
-    }
+      routerLink: ""
+    };
   },
   methods: {
-    handleChangeTitle (idx) {
+    handleChangeTitle(idx) {
       for (let index in this.triangle) {
         if (this.triangle.hasOwnProperty(index)) {
-          this.triangle[index] = false
+          this.triangle[index] = false;
         }
       }
-      this.triangle[idx] = true
+      this.triangle[idx] = true;
     },
-    handleChangeMusicType (type) {
-      this.musicType = []
-      this.musicType.unshift(type)
+    handleChangeMusicType(type) {
+      this.musicType = [];
+      this.musicType.unshift(type);
     }
   }
-}
+};
 </script>
 <style lang="less" scoped>
 .top-bar-container {
@@ -134,7 +180,7 @@ export default {
           width: 35px;
           height: 35px;
           border-radius: 50%;
-          background: url('../assets/logo.png') no-repeat;
+          background: url("../assets/logo.png") no-repeat;
           background-size: 100% 100%;
         }
         &:nth-child(2) {
@@ -169,7 +215,7 @@ export default {
         padding: 0;
         align-items: center;
         a {
-          flex-basis:95px;
+          flex-basis: 95px;
           flex-grow: 1;
           &:nth-child(3) {
             flex-basis: 65px;
@@ -203,7 +249,7 @@ export default {
               width: 0;
               height: 0;
               border: 8px solid transparent;
-              border-bottom: 8px solid #C20C0C;
+              border-bottom: 8px solid #c20c0c;
               position: absolute;
               bottom: 0;
               left: 50%;
@@ -218,7 +264,7 @@ export default {
       height: 100%;
       display: flex;
       padding: 20px 0 20px 30px;
-      /deep/ Input {
+      /deep/ input {
         border-radius: 25px;
       }
       div {
@@ -253,7 +299,7 @@ export default {
   }
   .top-bar-hot {
     min-height: 5px;
-    background-color: #C20C0C;
+    background-color: #c20c0c;
     border-bottom: 1px solid #a40011;
     > div {
       &:nth-child(1) {
@@ -281,7 +327,7 @@ export default {
               &:hover {
                 cursor: pointer;
                 span {
-                  background-color: #9B0909;
+                  background-color: #9b0909;
                 }
               }
             }
@@ -294,7 +340,7 @@ export default {
     background-color: #000;
   }
   .top-span-active {
-    background-color: #9B0909;
+    background-color: #9b0909;
   }
 }
 </style>
