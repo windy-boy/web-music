@@ -2,20 +2,20 @@
   <div class="btm-bar-container" ref="btm-bar-container">
     <div class="main-container">
       <div class="play-btns">
-        <a class="m-playbar" href="javascript:;" title="ÉÏÒ»Ê×(ctrl+¡û)">
-          ÉÏÒ»Ê×
+        <a class="m-playbar" href="javascript:;" title="ä¸Šä¸€é¦–(ctrl+â†)">
+          ä¸Šä¸€é¦–
         </a>
         <a
           class="m-playbar"
           :class="play ? 'play' : 'paused'"
           href="javascript:;"
-          title="²¥·Å/ÔİÍ£(p)"
+          title="æ’­æ”¾/æš‚åœ(p)"
           @click="handlePlayBtn"
         >
-          ²¥·Å/ÔİÍ£
+          æ’­æ”¾/æš‚åœ
         </a>
-        <a class="m-playbar" href="javascript:;" title="ÏÂÒ»Ê×(ctrl+¡ú)"
-          >ÏÂÒ»Ê×</a
+        <a class="m-playbar" href="javascript:;" title="ä¸‹ä¸€é¦–(ctrl+â†’)"
+          >ä¸‹ä¸€é¦–</a
         >
       </div>
       <div class="head">
@@ -67,8 +67,8 @@
         </div>
       </div>
       <div class="oper">
-        <a href="javascript:;" title="ÊÕ²Ø" class="m-playbar"></a>
-        <a href="javascript:;" title="·ÖÏí" class="m-playbar"></a>
+        <a href="javascript:;" title="æ”¶è—" class="m-playbar"></a>
+        <a href="javascript:;" title="åˆ†äº«" class="m-playbar"></a>
       </div>
       <div class="ctrl m-playbar">
         <div></div>
@@ -77,9 +77,9 @@
           class="m-playbar"
           @click="handleShowOrHideVoice"
         ></a>
-        <a href="javascript:;" class="m-playbar" title="Ëæ»ú"></a>
+        <a href="javascript:;" class="m-playbar" title="éšæœº"></a>
         <span @click="handleShowList">
-          <a href="javascript:;" class="m-playbar" title="²¥·ÅÁĞ±í">
+          <a href="javascript:;" class="m-playbar" title="æ’­æ”¾åˆ—è¡¨">
             {{ songList.length }}
           </a>
         </span>
@@ -101,19 +101,19 @@
         <div class="listhd">
           <div class="listhdc">
             <h4>
-              ²¥·ÅÁĞ±í(<span>61</span>)
+              æ’­æ”¾åˆ—è¡¨(<span>61</span>)
             </h4>
             <a href="javascript:;" class="addall">
               <span class="ico ico-add m-playbar "></span>
-              ÊÕ²ØÈ«²¿
+              æ”¶è—å…¨éƒ¨
             </a>
             <span class="line"></span>
             <a href="javascript:;" class="clear">
               <span class="ico ico-del"></span>
-              Çå³ı
+              æ¸…é™¤
             </a>
             <p class="lytit">{{ songItem.name }}</p>
-            <span class="close ico">¹Ø±Õ</span>
+            <span class="close ico">å…³é—­</span>
           </div>
         </div>
         <div class="listbd">
@@ -135,10 +135,10 @@
                   <div class="col col-2">{{ item.name }}</div>
                   <div class="col col-3">
                     <div class="icns">
-                      <i title="É¾³ı" class="ico icn-del">É¾³ı</i>
-                      <i title="ÏÂÔØ" class="ico ico-dl">ÏÂÔØ</i>
-                      <i title="·ÖÏí" class="ico ico-share">·ÖÏí</i>
-                      <i title="ÊÕ²Ø" class="j-t ico ico-add">ÊÕ²Ø</i>
+                      <i title="åˆ é™¤" class="ico icn-del">åˆ é™¤</i>
+                      <i title="ä¸‹è½½" class="ico ico-dl">ä¸‹è½½</i>
+                      <i title="åˆ†äº«" class="ico ico-share">åˆ†äº«</i>
+                      <i title="æ”¶è—" class="j-t ico ico-add">æ”¶è—</i>
                     </div>
                   </div>
                   <div class="col col-4">
@@ -148,7 +148,7 @@
                   </div>
                   <div class="col col-5">{{ item.songTime }}</div>
                   <div class="col col-6">
-                    <div class="ico" title="À´×ÔÉñÃØµÄ°ÙÄ½´ó¡­¡­"></div>
+                    <div class="ico" title="æ¥è‡ªç¥ç§˜çš„ç™¾æ…•å¤§â€¦â€¦"></div>
                   </div>
                 </li>
               </ul>
@@ -272,7 +272,7 @@ export default {
         evt = evt || window.event;
         evt.stopPropagation();
         if (evt.pageY < _pageY) {
-          // ÏòÉÏ
+          // å‘ä¸Š
           this.$refs.curr.style.height = _h + (_pageY - evt.pageY) + "px";
           this.$refs.alpha.style.top = _top - (_pageY - evt.pageY) + "px";
           if (this.$refs.curr.clientHeight > 100) {
@@ -282,7 +282,7 @@ export default {
             this.$refs.alpha.style.top = "0px";
           }
         } else {
-          // ÏòÏÂ
+          // å‘ä¸‹
           this.$refs.curr.style.height = _h - (evt.pageY - _pageY) + "px";
           this.$refs.alpha.style.top = _top + (evt.pageY - _pageY) + "px";
           if (this.$refs.alpha.style.top.split("p")[0] > 90) {
@@ -309,14 +309,14 @@ export default {
       document.onmousemove = evt => {
         evt.stopPropagation();
         if (evt.pageX > startX) {
-          // Ïò×ó
+          // å‘å·¦
           let b = evt.pageX - startX + curW;
           _wRate = b / 493;
           if (_wRate > 1) {
             _wRate = 1;
           }
         } else if (evt.pageX < startX) {
-          // ÏòÓÒ
+          // å‘å³
           let b = curW - (startX - evt.pageX);
           _wRate = b / 493;
           if (_wRate < 0) {
@@ -355,7 +355,7 @@ export default {
       }
       this.intervalFn();
       document.onmouseup = evt => {
-        //¸²¸ÇÍÏ¶¯µÄmouseupÊÂ¼ş
+        //è¦†ç›–æ‹–åŠ¨çš„mouseupäº‹ä»¶
         evt.stopPropagation();
       };
     },

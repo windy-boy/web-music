@@ -1,6 +1,9 @@
-# web-music
+### web-music
 
-## Project setup
+* 仿网易云音乐，闲暇之余所作，查漏补缺，不定期更新。
+* 接口由[free-api](https://www.free-api.com/doc/399)提供
+
+### Project setup
 ```
 npm install
 ```
@@ -15,15 +18,8 @@ npm run serve
 npm run build
 ```
 
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### 已完成：
+* 发现音乐页面
+* 播放列表页面
+* 添加音乐到播放列表
+* 播放音乐
